@@ -7,7 +7,7 @@ class ValidateFilter: AbstractFilterFactory {
     override val next: AbstractFilterFactory
         get() = AuthFilter()
 
-    override fun doFilter(request: Request) {
-        next.doFilter(request)
+    override fun doFilter(config: Map<String, String>, request: Request) {
+        next.doFilter(config, request)
     }
 }
