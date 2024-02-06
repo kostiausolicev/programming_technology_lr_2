@@ -7,7 +7,8 @@ class RoleCheckFilter: AbstractFilterFactory {
     override val next: AbstractFilterFactory
         get() = AuthFilter()
 
-    override fun doFilter(config: Map<String, String>, request: Request) {
+    override fun doFilter(config: Map<String, String>?, request: Request) {
+        config ?: throw Exception()
         if (config["role"] != request.role)
             throw Exception()
         next.doFilter(config, request)

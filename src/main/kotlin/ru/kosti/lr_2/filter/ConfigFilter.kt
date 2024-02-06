@@ -12,7 +12,7 @@ class ConfigFilter: AbstractFilterFactory {
     override val next: AbstractFilterFactory
         get() = ValidateFilter()
 
-    override fun doFilter(config: Map<String, String>, request: Request) {
+    override fun doFilter(config: Map<String, String>?, request: Request) {
         val path = request.path
         val role = configMap[path] ?: throw Exception()
         next.doFilter(mapOf(

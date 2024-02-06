@@ -1,6 +1,6 @@
 package ru.kosti.lr_2.model
 
-import java.security.Timestamp
+import java.sql.Timestamp
 
 data class Request(
     val key: String,
