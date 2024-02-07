@@ -6,5 +6,5 @@ interface AbstractFilterFactory {
     val next: AbstractFilterFactory?
         get() = null
 
-    fun doFilter(config: Map<String, String>?, request: Request)
+    fun doFilter(config: Map<String, Int>?, request: Request)
 }

@@ -1,16 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="ru.kosti.lr_2.controller.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<VBox alignment="CENTER" prefHeight="297.0" prefWidth="308.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ru.kosti.lr_2.controller.HelloController">
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+   <Label text="Enter path">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <TextField fx:id="path" prefHeight="0.0" prefWidth="268.0">
+      <opaqueInsets>
+         <Insets left="20.0" right="20.0" />
+      </opaqueInsets>
+   </TextField>
+   <Label text="Enter secret key">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <PasswordField fx:id="secretKey" />
+   <Label text="Select your role">
+      <font>
+         <Font size="14.0" />
+      </font>
+   </Label>
+   <ComboBox fx:id="roleCombobox" prefWidth="150.0" />
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+   <Label fx:id="welcomeText" />
+   <Button onAction="#onHelloButtonClick" prefHeight="26.0" prefWidth="107.0" text="Send request" />
 </VBox>
+

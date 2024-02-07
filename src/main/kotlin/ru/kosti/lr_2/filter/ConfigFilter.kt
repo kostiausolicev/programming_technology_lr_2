@@ -15,15 +15,15 @@ class ConfigFilter : AbstractFilterFactory {
         Scanner(stream)
             .useDelimiter("\\A")
             .next()
-            .let { mapper.readValue<Map<String, String>>(it) }
+            .let { mapper.readValue<Map<String, Int>>(it) }
     } ?: mapOf(
-        "user" to "user"
+        "user" to 0
     )
 
     override val next: AbstractFilterFactory
         get() = ValidateFilter()
 
-    override fun doFilter(config: Map<String, String>?, request: Request) {
+    override fun doFilter(config: Map<String, Int>?, request: Request) {
         val path = request.path
         val role = configMap[path] ?: throw ConfigException("Path not found in config file")
         next.doFilter(

@@ -5,6 +5,6 @@ import java.sql.Timestamp
 data class Request(
     val key: String,
     val path: String,
-    val role: String,
+    val role: Int,
     val date: Timestamp
 )

@@ -8,7 +8,7 @@ class AuthFilter(
     private val authService: AuthService = AuthService()
 ): AbstractFilterFactory {
 
-    override fun doFilter(config: Map<String, String>?, request: Request) {
+    override fun doFilter(config: Map<String, Int>?, request: Request) {
         authService.auth(request.key)
         next?.doFilter(config, request)
     }

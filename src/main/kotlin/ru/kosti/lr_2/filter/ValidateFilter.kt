@@ -9,7 +9,7 @@ class ValidateFilter: AbstractFilterFactory {
     override val next: AbstractFilterFactory
         get() = RoleCheckFilter()
 
-    override fun doFilter(config: Map<String, String>?, request: Request) {
+    override fun doFilter(config: Map<String, Int>?, request: Request) {
         if ((request.date.time / 1000) > Instant.now().epochSecond)
             throw ValidateException()
         next.doFilter(config, request)
