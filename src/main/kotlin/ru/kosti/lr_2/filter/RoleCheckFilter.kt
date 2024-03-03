@@ -11,7 +11,7 @@ class RoleCheckFilter: AbstractFilterFactory {
     override fun doFilter(config: Map<String, Int>?, request: Request) {
         config ?: throw Exception()
         if (config["role"]!! > request.role)
-            throw RoleCheckException()
+            throw RoleCheckException("Role with permissions ${request.role} is deny")
         next.doFilter(config, request)
     }
 }
